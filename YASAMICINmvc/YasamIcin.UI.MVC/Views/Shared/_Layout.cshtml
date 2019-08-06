@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        .a {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div  class="col-lg-3" style="background-color:white">
+                <a href="/Home/Anasayfa">
+                    <img src="~/Content/Image/giphy.gif" style="width:175px ; height:80px"  />
+                </a>
+                
+            </div>
+            <div class="col-lg-9" style="background-color:white">
+                <div class="col-lg-12" style="margin-top:30px">
+                    <div class="col-lg-2"><a href="/Home/Anasayfa">Anasayfa</a></div>
+                    <div class="col-lg-2"><a href="/Home/Hakkimizda">Hakkımızda</a></div>
+                    <div class="col-lg-3"><a href="/ProfilArama/Index">Gelişmiş Profil Arama</a></div>
+                    <div class="col-lg-3"><a href="/Home/YasalDuzenleme">Yasal Düzenlemeler</a></div>
+                    <div class="col-lg-2"><a href="/Home/Iletisim">İletişim</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="col-lg-12">
+                    <br />
+                    <img src="~/Content/Image/uyari.png" style="width:90px ; height:90px" />
+                </div>
+                <div class="col-lg-12">
+                    <br />
+                    @YasamIcin.UI.MVC.Models.SayfaDetayText.Get("Yasal Uyarı").Metin
+                </div>
+            </div>
+            <div class="col-lg-10">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

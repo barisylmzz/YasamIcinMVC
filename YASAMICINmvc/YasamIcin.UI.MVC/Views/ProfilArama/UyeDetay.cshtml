@@ -1,0 +1,267 @@
+﻿@model YasamIcin.Model.Uye
+@{
+
+}
+
+<table style="width:100%;height:auto" cellpadding="10">
+    <tr>
+        <td>
+            İsim :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Isim
+
+            }
+            else
+            {
+                if (Model.Donor.DonorOnay.Isim)
+                {
+                    @Model.Donor.Isim
+                }
+
+            }
+
+        </td>
+
+        <td>
+            Soyisim :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Soyisim
+            }
+            else
+            {
+                if (Model.Donor.DonorOnay.Soyisim)
+                {
+                    @Model.Donor.Soyisim
+                }
+            }
+        </td>
+        <td rowspan="3" colspan="3">
+
+            @if (Model.Type == true)
+            {
+                <img src="~/Img/@Model.Hasta.Fotograf" width="120" height="210" />
+            }
+            else
+            {
+
+                <img src="~/Img/@Model.Donor.Fotograf" width="120" height="210" />
+
+            }
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            TC :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.TCKimlikNo
+            }
+            else
+            {
+
+                @Model.Donor.TCKimlikNo
+
+            }
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="2">
+            Adres:
+            @if (Model.Type == true)
+            {
+
+                @Model.Hasta.Adres
+            }
+            else
+            {
+
+                @Model.Donor.Adres
+
+            }
+        </td>
+
+    </tr>
+    <tr>
+
+        <td>
+            Sehir :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Sehir.SehirAdi
+            }
+            else
+            {
+                if (Model.Donor.DonorOnay.Sehir)
+                {
+                    @Model.Donor.Sehir.SehirAdi
+                }
+            }
+        </td>
+        <td colspan="2">
+            Ulke :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Ulke.UlkeAdi
+            }
+            else
+            {
+                if (Model.Donor.DonorOnay.Ulke)
+                {
+                    @Model.Donor.Ulke.UlkeAdi
+                }
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            GSM :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.GSM
+            }
+            else
+            {
+                if (Model.Donor.DonorOnay.GSM)
+                {
+                    @Model.Donor.GSM
+                }
+            }
+        </td>
+        <td colspan="2">
+            EMAIL :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Email
+            }
+            else
+            {
+                if (Model.Donor.DonorOnay.Email)
+                {
+                    @Model.Donor.Email
+                }
+            }
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            Cinsiyet :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Cinsiyet.CinsiyetTipi
+            }
+            else
+            {
+                if (Model.Donor.DonorOnay.Cinsiyet)
+                {
+                    @Model.Donor.Cinsiyet.CinsiyetTipi
+                }
+            }
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="3">
+            Hasta Kan Gurubu :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.KanGrubu.KanGrubuTipi
+            
+            }
+            else
+            {
+            if (Model.Donor.DonorOnay.KanGrubu)
+            {
+            @Model.Donor.KanGrubu.KanGrubuTipi
+            }
+            }
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="3">
+
+
+            @if (Model.Type == true)
+            {@("Bagis İstek Türü : ")
+            @Model.Hasta.BagisTuru.BagisTipi
+        }
+        else
+        {
+            @("Bagis Türü : ")
+                if (Model.Donor.DonorOnay.BagisTuru)
+                {
+            @Model.Donor.BagisTuru.BagisTipi
+                }
+            }
+
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="3">
+
+            Bagis Naklinin Yapılabilmesi için  son gün :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.BagisTarihi
+            }
+            else
+            {
+                @Model.Donor.BagisTarihi
+            }
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td colspan="3">
+            @("Profil Bilgileri :")
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.ProfilBilgileri
+
+            }
+            else
+            {
+                @Model.Donor.ProfilBilgileri
+            }
+        </td>
+
+    </tr>
+    <tr>
+
+        @if (Model.Type == true)
+        {
+            <td></td>
+            <td>
+                <div class="col-lg-12">
+                    @Html.ActionLink("Hasta İle İletişime Geç", "Index", "Mesaj", new { UyeID = Model.ID }, new { @class = "btn btn-default" })
+                </div>
+            </td>
+            <td>
+                <div class="col-lg-12">
+                    <input type="button" style="margin-right:50px"class="btn btn-default" onclick="MesajGonder(@Model.ID)" value="Bağış Yap" />
+                </div>
+            </td>
+        }
+        else
+        {
+            <td></td>
+            <td>
+                <div class="col-lg-12">
+                    @Html.ActionLink("Donör İle İletişime Geç", "Index", "Mesaj", new { UyeID = Model.ID }, new { @class = "" })
+                </div>
+            </td>
+            <td>
+                <div class="col-lg-12">
+                    <input type="button" onclick="MesajGonder(@Model.ID)" value="Bağış Yap" />
+                </div>
+            </td>
+        }
+    </tr>
+</table>
+

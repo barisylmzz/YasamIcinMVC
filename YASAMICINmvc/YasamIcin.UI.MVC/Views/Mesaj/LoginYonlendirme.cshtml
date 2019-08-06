@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "LoginYonlendirme";
+}
+
+<div class="col-lg-12">
+    <div class="col-lg-12" style="margin-top:50px">
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-10">
+            <h2 style="color:red">KULLANICILAR ILE ILETISIME GECEBILMEK ICIN SİTEYE GİRİŞ YAPMANIZ GEREKMEKTEDIR !</h2>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-10" style="margin-top:30px;margin-bottom:20px">
+            @Html.ActionLink("HASTA GIRISI", "Index", "Hasta",null,new {style= "margin-left:260px;width:200px;font-size:22px", @class= "btn btn-default" })
+          
+        </div>
+        
+        <div class="col-lg-2" style="font-size:22px">
+        </div>
+        <div class="col-lg-10">
+            @Html.ActionLink("DONOR GIRISI", "Index", "Donor",null, new {
+           style = "margin-left:260px;width:200px;font-size:22px", @class = "btn btn-default" })      
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,59 @@
+﻿@model YasamIcin.Model.MesajDetay
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("MesajGonder", "Mesaj", FormMethod.Post))
+{
+<div class="col-lg-12" style="margin-top:50px">
+    <div class="col-lg-12">
+        @Html.TextAreaFor(x => x.MesajIcerik, new { style = "width:500px;margin-left:240px" })
+    </div>
+    <div class="col-lg-12" style="margin-top:20px">
+        @Html.HiddenFor(x => x.MesajID, new { @Value = (ViewBag.MesajID as YasamIcin.Model.Mesaj).MesajID })
+    </div>
+</div>
+    
+<div class="col-lg-12">
+    <input type="submit" value="Mesajı Gönder " style="margin-left:330px" />
+</div>
+    
+}
+
+<div class="col-lg-12" style="margin-top:40px">
+
+    <table class="table table-striped">
+        <tr>
+            <td>
+                Mesaj  Icerik
+            </td>
+
+            <td>
+                Kim Yollamış
+            </td>
+        </tr>
+
+        @foreach (YasamIcin.Model.MesajDetay item in ViewBag.Mesaj)
+        {
+            <tr>
+                <td>
+                    @item.MesajIcerik
+                </td>
+                <td>
+                    @if (item.Uye.Type == true)
+                    {
+                        @item.Uye.Hasta.Isim
+                    }
+                    else
+                    {
+                        @item.Uye.Donor.Isim
+                    }
+                </td>
+            </tr>
+
+
+        }
+    </table>
+
+
+</div>

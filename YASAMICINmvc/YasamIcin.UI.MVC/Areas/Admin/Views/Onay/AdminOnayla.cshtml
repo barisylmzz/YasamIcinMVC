@@ -1,0 +1,281 @@
+﻿@model YasamIcin.Model.Uye
+@{
+
+}
+
+<table style="width:100%;height:auto" cellpadding="10px">
+    <tr>
+        <td>
+            İsim :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Isim
+            }
+            else
+            {
+                @Model.Donor.Isim
+            }
+        </td>
+        <td>
+            Soyisim :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Soyisim
+            }
+            else
+            {
+                @Model.Donor.Soyisim
+            }
+        </td>
+        <td rowspan="3" colspan="3">
+
+            @if (Model.Type == true)
+            {
+            <div style="background-color:red;float:left;margin-left:150px">
+                <img src="~/Img/@Model.Hasta.Fotograf" width="120" height="210" />
+            </div>
+            }
+            else
+            {
+            <div style="background-color:red;float:left;margin-left:150px">
+                <img src="~/Img/@Model.Donor.Fotograf" width="120" height="210" />
+            </div>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            TC :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.TCKimlikNo
+            }
+            else
+            {
+                @Model.Donor.TCKimlikNo
+            }
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="2">
+            Adres:
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Adres
+            }
+            else
+            {
+                @Model.Donor.Adres
+            }
+        </td>
+
+    </tr>
+    <tr>
+
+        <td>
+            Sehir :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Sehir.SehirAdi
+            }
+            else
+            {
+                @Model.Donor.Sehir.SehirAdi
+            }
+        </td>
+        <td colspan="2">
+            Ulke :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Ulke.UlkeAdi
+            }
+            else
+            {
+                @Model.Donor.Ulke.UlkeAdi
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Telefon :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.GSM
+            }
+            else
+            {
+                @Model.Donor.GSM
+            }
+        </td>
+        <td colspan="2">
+            Email :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Email
+            }
+            else
+            {
+                @Model.Donor.Email
+            }
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            Cinsiyet :
+            @if (Model.Type == true)
+            {
+                @Model.Hasta.Cinsiyet.CinsiyetTipi
+            }
+            else
+            {
+                @Model.Donor.Cinsiyet.CinsiyetTipi
+            }
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="3">
+
+            @if (Model.Type == true)
+            {@("Hasta Kan Gurubu : ")
+            @Model.Hasta.KanGrubu.KanGrubuTipi
+        }
+        else
+        {
+            @Model.Donor.KanGrubu.KanGrubuTipi
+        }
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="3">
+
+
+            @if (Model.Type == true)
+            {@("Bagis İstek Türü : ")
+            @Model.Hasta.BagisTuru.BagisTipi
+        }
+        else
+        {
+            @Model.Donor.BagisTuru.BagisTipi
+        }
+
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="3">
+
+
+            @if (Model.Type == true)
+            {@("Bagis Naklinin Yapılabilmesi için  son gün : ")
+            @Model.Hasta.BagisTarihi
+        }
+        else
+        {
+            @Model.Donor.BagisTuru.BagisTipi
+        }
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td colspan="3">
+           
+                @("Profil Bilgileri :")
+                @if (Model.Type == true)
+                {
+                    @Model.Hasta.ProfilBilgileri
+
+                }
+                else
+                {
+                    @Model.Donor.ProfilBilgileri
+                }
+          
+        </td>
+
+    </tr>
+    <tr>
+
+        @if (Model.Type == true)
+        {
+            <td></td>
+            <td>
+                <div class="col-lg-12">
+                    <input type="button" onclick="Onayla(@Model.ID)" value="Hasta Profili Onayla" />
+                </div>
+            </td>
+            <td>
+                <div class="col-lg-12">
+                    <input type="button" onclick="Reddet(@Model.ID)" value="Hasta Profili Reddet" />
+                </div>
+            </td>
+        }
+        else
+        {
+            <td></td>
+            <td>
+                <div class="col-lg-12">
+                    <input type="button" onclick="Onayla(@Model.ID)" value="Donör Profili Onayla" />
+                </div>
+            </td>
+            <td>
+                <div class="col-lg-12">
+                    <input type="button" onclick="Reddet(@Model.ID)" value="Donör Profili Reddet" />
+                </div>
+            </td>
+        }
+    </tr>
+</table>
+
+<script>
+    function Onayla(id)
+    {
+        alert(id);
+         $.ajax
+    (
+        {
+                     type: "POST",
+                     url: '@Url.Action("AdminOnayi", "Onay")',
+                     data: { id : id },
+                     success: function (data) {
+                         if (data == "True") {
+                             alert("Onaylama işlemi başarılı");
+                             window.location.assign("../Index")
+                         }
+                         else {
+                             alert("Onaylama sırasında hata oluştu");
+                             window.location.assign("../Index")
+                         }
+                     }
+
+        }
+    )
+    }
+    function Reddet(id)
+    {
+        alert(id);
+         $.ajax
+    (
+        {
+                     type: "POST",
+                     url: '@Url.Action("AdminReddet", "Onay")',
+                     data: { id : id },
+                     success: function (data) {
+                         if (data == "True") {
+                             alert("Reddet işlemi başarılı");
+                             window.location.assign("../Index")
+                         }
+                         else {
+                             alert("Reddet sırasında hata oluştu");
+                             window.location.assign("../Index")
+                         }
+                     }
+
+        }
+    )
+    }
+</script>

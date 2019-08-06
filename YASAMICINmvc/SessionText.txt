@@ -1,0 +1,5 @@
+Session["user"]
+Session["donor"]
+Session["hasta"]
+Session["admin"]
+Session["donoronay"]

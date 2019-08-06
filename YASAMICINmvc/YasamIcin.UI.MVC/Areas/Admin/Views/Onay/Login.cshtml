@@ -1,0 +1,83 @@
+﻿@model YasamIcin.Model.Uye
+
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="col-lg-12">
+    <div class="col-lg-12">
+        <h1 style="margin-left:100px">ADMIN GİRİSİ</h1>
+    </div>
+    @*<div class="col-lg-12">
+            <div class="col-lg-5" style="margin-left:100px">
+                <div class="col-lg-12">
+                    <label>Kullanici Adi</label>
+                    <input type="text" id="kullaniciAdi"/>
+                </div>
+                <div class="col-lg-12">
+                    <label>Şifre</label>
+                    <input type="password" id="password" />
+                </div>
+                <div class="col-lg-12">
+                    <input type="button" onclick="Login()" value="Giriş"/>
+                </div>
+            </div>
+        </div>*@
+    <div class="col-lg-12">
+        @using (Html.BeginForm("Login", "Onay", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.KullaniciAdi, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.Editor("kullaniciAdi", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.KullaniciAdi, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Sifre, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.Editor("password", new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Giriş" class="btn btn-default" />
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+@*<script>
+    function Login() {
+         $.ajax
+    (
+        {
+                     type: "POST",
+                     url: '@Url.Action("Login","Onay")',
+                     data: { kullaniciAdi: $("#kullaniciAdi").val(), password: $("#password").val() },
+                     success: function (data) {
+                         if (data == "true") {
+                             window.location.assign("Index")
+                         }
+                         else {
+                             window.location.assign("Login")
+                         }
+                     }
+
+        }
+    )
+    }
+</script>*@

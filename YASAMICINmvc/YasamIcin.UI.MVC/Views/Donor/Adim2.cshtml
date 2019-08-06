@@ -1,0 +1,110 @@
+﻿@model YasamIcin.Model.DonorOnay
+
+@{
+    ViewBag.Title = "Adim2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Adim2</h2>
+
+
+@using (Html.BeginForm("DonorKayitPOST3", "Donor",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal" style="border:solid">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Isim)
+                @Html.ValidationMessageFor(model => model.Isim, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.LabelFor(model => model.Soyisim, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Soyisim)
+                @Html.ValidationMessageFor(model => model.Soyisim, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.LabelFor(model => model.Cinsiyet, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Cinsiyet)
+                @Html.ValidationMessageFor(model => model.Cinsiyet, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Sehir, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Sehir)
+                @Html.ValidationMessageFor(model => model.Sehir, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.LabelFor(model => model.Ulke, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Ulke)
+                @Html.ValidationMessageFor(model => model.Ulke, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.GSM, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.GSM)
+                @Html.ValidationMessageFor(model => model.GSM, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.KanGrubu, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.KanGrubu)
+                @Html.ValidationMessageFor(model => model.KanGrubu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.LabelFor(model => model.BagisTuru, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-2">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.BagisTuru)
+                @Html.ValidationMessageFor(model => model.BagisTuru, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,38 @@
+﻿@model ICollection<YasamIcin.UI.MVC.Models.ProfilDTO>
+    @{
+    ViewBag.Title = "Index";
+    }
+
+  
+    @Html.AntiForgeryToken()
+
+    <div class="col-lg-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Profil & Lokasyon</th>
+                    <th>Bağış Türü</th>
+                    <th>Yayınlanma Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (YasamIcin.UI.MVC.Models.ProfilDTO item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Isim + " " + item.Soyisim, "UyeDetay", new RouteValueDictionary(new { id = item.ID }))
+                        <br />
+                        Ülke : @item.Ulke
+                    </td>
+                    <td>
+                        @item.BagisTuru
+                    </td>
+                    <td>@item.OlusturulmaTarihi</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+
+

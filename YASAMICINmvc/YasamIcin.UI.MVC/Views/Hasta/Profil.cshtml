@@ -1,0 +1,115 @@
+﻿@model YasamIcin.Model.Hasta
+
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h2>Profil</h2>
+
+<div class="col-lg-9">
+
+    @using (Html.BeginForm("ProfilGuncelle", "Hasta", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            <h4>Hasta</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Isim)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Isim)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Soyisim)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Soyisim)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TCKimlikNo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TCKimlikNo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fotograf)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fotograf)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DogumTarihi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DogumTarihi)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Adres)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Adres)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GSM)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GSM)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProfilBilgileri)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProfilBilgileri)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.BagisTarihi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.BagisTarihi)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            <input type="submit" class="btn btn-success" value="Profil Güncelle" />
+
+        </p>
+    }
+</div>
+<div class="col-lg-3">
+    <div class="col-lg-12">
+        <img src="~/Content/Image/e.png" style="width:70px;margin-left:20px" />
+    </div>
+    <div class="col-lg-12">
+       @Html.ActionLink("GELEN KUTUSU","Gelenkutusu","Mesaj")
+    </div>
+    
+</div>

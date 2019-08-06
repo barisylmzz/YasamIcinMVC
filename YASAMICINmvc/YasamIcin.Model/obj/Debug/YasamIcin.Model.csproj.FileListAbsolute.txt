@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\YasamIcin.Model.dll.config
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\YasamIcin.Model.dll
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\YasamIcin.Model.pdb
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\YasamIcin.Core.dll
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\YasamIcin.Core.pdb
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\YasamIcin.Core.dll.config
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\obj\Debug\YasamIcin.Model.csprojAssemblyReference.cache
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\obj\Debug\YasamIcin.Model.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\obj\Debug\YasamIcin.Model.csproj.CopyComplete
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\obj\Debug\YasamIcin.Model.dll
+C:\Users\User\Desktop\cartcurt\MVC YasamIcin\YASAMICINmvc\YasamIcin.Model\obj\Debug\YasamIcin.Model.pdb

@@ -1,0 +1,99 @@
+﻿@model YasamIcin.Model.Donor
+
+@{
+    ViewBag.Title = "DonorKayit";
+}
+<div class="col-lg-12" id="test">
+    <div class="col-lg-12">
+        <h3 style="margin-left:150px">DONOR PROFİLİ OLUŞTUR</h3>
+    </div>
+    <div class="col-lg-12">
+
+        <div class="col-lg-3">
+            <img src="~/Content/Image/t.png" style="height:200px;width:50px" />
+        </div>
+        <div class="col-lg-9">
+            Yasal Uyarı Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.
+        </div>
+
+    </div>
+    @using (Html.BeginForm("DonorKayitPOST", "Donor"))
+    {
+        <div class="col-lg-12" style="margin-top:200px">
+
+
+            @Html.AntiForgeryToken()
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-horizontal" style="border-style:solid">
+                <br />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Isim, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Isim, new { htmlAttributes = new { @class = "form-control", id = "i" } })
+                        @Html.ValidationMessageFor(model => model.Isim, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Soyisim, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Soyisim, new { htmlAttributes = new { @class = "form-control", id = "s" } })
+                        @Html.ValidationMessageFor(model => model.Soyisim, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Yasamicin.com'dan nasıl haberdar oldunuz ?</label>
+                    <div class="col-md-10">
+                        <select class="form-control">
+                            <option>İnternetten</option>
+                            <option>Arkadaştan</option>
+                            <option>Reklamlardan</option>
+                            <option>Sosyal Vakıflardan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Sonraki Sayfa" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@*<script>
+        function Adim1() {
+
+            $.ajax({
+                type:"POST",
+                url: '@Url.Action("DonorKayitPOST","Donor")',
+                data: { isim: $("#i").val(), soyisim: $("#s").val() },
+                success: function (data) {
+                    document.getElementById("test").innerHTML = data;
+                }
+            })
+        }
+
+        function Adim2()
+        {
+             var donor = {};
+            donor.Soyisim=
+            donor.Isim =
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: '@Url.Action("DonorKayitPOST2", "Donor")',
+                data: '{donor: ' + JSON.stringify(donor) + '}',
+                success: function (data) {
+                    document.getElementById("test").innerHTML = data;
+                }
+            })
+        }
+    </script>*@

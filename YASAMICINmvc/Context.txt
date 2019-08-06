@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using YasamIcin.Model;
+
+namespace YasamIcin.DAL
+{
+    public class YasamIcinDBContext:DbContext
+    {
+        public YasamIcinDBContext():base("Server =DESKTOP-Q0A3P5Q\\SQLEXPRESS; Database=testMVC;Integrated Security = True")
+        {
+
+         
+        }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Uye>().HasRequired(x => x.Donor).WithOptional(x => x.Uye).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Uye>().HasRequired(x => x.Hasta).WithOptional(x => x.Uye).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Uye>().HasMany(x => x.Mesajlar1).WithRequired(x => x.Uye_1).HasForeignKey(X => X.UyeID1).WillCascadeOnDelete(false); ;
+            modelBuilder.Entity<Uye>().HasMany(x => x.Mesajlar2).WithRequired(x => x.Uye_2).HasForeignKey(X => X.UyeID2).WillCascadeOnDelete(false); ;
+            modelBuilder.Entity<Uye>().HasMany(x => x.MesajDetays).WithRequired(x => x.Uye).HasForeignKey(x=>x.GondereciUyeID).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Mesaj>().HasMany(x => x.MesajDetays).WithRequired(x => x.Mesaj).HasForeignKey(x => x.MesajID).WillCascadeOnDelete(false);
+            
+        }
+
+
+        public virtual DbSet<Uye>  Uyes{ get; set; }
+        public virtual DbSet<Donor>  Donors{ get; set; }
+        public virtual DbSet<Hasta> Hastas { get; set; }
+        public virtual DbSet<Mesaj> Mesajs { get; set; }
+        public virtual DbSet<Ulke> Ulkes { get; set; }
+        public virtual DbSet<Sehir> Sehirs { get; set; }
+        public virtual DbSet<BagisTuru> BagisTurus { get; set; }
+        public virtual DbSet<Cinsiyet> Cinsiyets { get; set; }
+        public virtual DbSet<GuvenlikSoru> GuvenlikSorus { get; set; }
+        public virtual DbSet<KanGrubu> KanGrubus { get; set; }
+        public virtual DbSet<MesajDetay> MesajDetays { get; set; }
+    }
+}

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09921293-C7D7-4CC7-9F37-F4AA225819CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YasamIcin.DAL</RootNamespace>
+    <AssemblyName>YasamIcin.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IBagisTuruDAL.cs" />
+    <Compile Include="Abstract\ICinsiyetDAL.cs" />
+    <Compile Include="Abstract\IDonorDAL.cs" />
+    <Compile Include="Abstract\IDonorOnayDAL.cs" />
+    <Compile Include="Abstract\IGuvenlikSoruDAL.cs" />
+    <Compile Include="Abstract\IHastaDAL.cs" />
+    <Compile Include="Abstract\IKanGrubuDAL.cs" />
+    <Compile Include="Abstract\IMesajDAL.cs" />
+    <Compile Include="Abstract\IMesajDetayDAL.cs" />
+    <Compile Include="Abstract\ISehirDAL.cs" />
+    <Compile Include="Abstract\IUlkeDAL.cs" />
+    <Compile Include="Abstract\IUyeDAL.cs" />
+    <Compile Include="Concrete\EntityFramework\BagisTuruRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\CinsiyetRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\DonorOnayRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\DonorRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\GuvenlikSoruRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\HastaRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\KanGrubuRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\MesajDetayRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\MesajRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\SehirRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\UlkeRepository.cs" />
+    <Compile Include="Concrete\EntityFramework\UyeRepository.cs" />
+    <Compile Include="Concrete\YasamIcinDbContext.cs" />
+    <Compile Include="Concrete\YasamicinInitializer.cs" />
+    <Compile Include="Mapping\BagisTuruMapping.cs" />
+    <Compile Include="Mapping\CinsiyetMapping.cs" />
+    <Compile Include="Mapping\DonorMapping.cs" />
+    <Compile Include="Mapping\DonorOnayMapping.cs" />
+    <Compile Include="Mapping\GuvenlikSoruMapping.cs" />
+    <Compile Include="Mapping\HastaMapping.cs" />
+    <Compile Include="Mapping\KanGrubuMapping.cs" />
+    <Compile Include="Mapping\MesajDetayMapping.cs" />
+    <Compile Include="Mapping\MesajMapping.cs" />
+    <Compile Include="Mapping\SehirMapping.cs" />
+    <Compile Include="Mapping\UlkeMapping.cs" />
+    <Compile Include="Mapping\UyeMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YasamIcin.Core\YasamIcin.Core.csproj">
+      <Project>{b22e9673-b994-44b0-ba25-c6cb9e9c89c6}</Project>
+      <Name>YasamIcin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YasamIcin.Model\YasamIcin.Model.csproj">
+      <Project>{08672be1-1afb-4766-bc45-84e6741bd952}</Project>
+      <Name>YasamIcin.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

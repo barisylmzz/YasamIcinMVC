@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YasamIcin.Core", "YasamIcin.Core\YasamIcin.Core.csproj", "{B22E9673-B994-44B0-BA25-C6CB9E9C89C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YasamIcin.Model", "YasamIcin.Model\YasamIcin.Model.csproj", "{08672BE1-1AFB-4766-BC45-84E6741BD952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YasamIcin.BLL", "YasamIcin.BLL\YasamIcin.BLL.csproj", "{40ACCEE0-3486-4C19-B65B-ABA2222E8873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YasamIcin.UI.MVC", "YasamIcin.UI.MVC\YasamIcin.UI.MVC.csproj", "{CFABE55D-5C21-496C-90F3-2FECC0F458E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Belgeler", "Belgeler", "{8E473938-76F8-41EF-B88E-A903B0A810A8}"
+	ProjectSection(SolutionItems) = preProject
+		Context.txt = Context.txt
+		SessionText.txt = SessionText.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YasamIcin.DAL", "YasamIcin.DAL\YasamIcin.DAL.csproj", "{09921293-C7D7-4CC7-9F37-F4AA225819CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B22E9673-B994-44B0-BA25-C6CB9E9C89C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B22E9673-B994-44B0-BA25-C6CB9E9C89C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B22E9673-B994-44B0-BA25-C6CB9E9C89C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B22E9673-B994-44B0-BA25-C6CB9E9C89C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08672BE1-1AFB-4766-BC45-84E6741BD952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08672BE1-1AFB-4766-BC45-84E6741BD952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08672BE1-1AFB-4766-BC45-84E6741BD952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08672BE1-1AFB-4766-BC45-84E6741BD952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40ACCEE0-3486-4C19-B65B-ABA2222E8873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40ACCEE0-3486-4C19-B65B-ABA2222E8873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40ACCEE0-3486-4C19-B65B-ABA2222E8873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40ACCEE0-3486-4C19-B65B-ABA2222E8873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFABE55D-5C21-496C-90F3-2FECC0F458E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFABE55D-5C21-496C-90F3-2FECC0F458E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFABE55D-5C21-496C-90F3-2FECC0F458E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFABE55D-5C21-496C-90F3-2FECC0F458E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09921293-C7D7-4CC7-9F37-F4AA225819CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09921293-C7D7-4CC7-9F37-F4AA225819CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09921293-C7D7-4CC7-9F37-F4AA225819CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09921293-C7D7-4CC7-9F37-F4AA225819CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5241F346-CBBF-413E-B00D-9C0582F707FD}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://brsyilmazz.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = YasamIcin.Core\\YasamIcin.Core.csproj
+		SccProjectName1 = YasamIcin.Core
+		SccLocalPath1 = YasamIcin.Core
+		SccProjectUniqueName2 = YasamIcin.Model\\YasamIcin.Model.csproj
+		SccProjectName2 = YasamIcin.Model
+		SccLocalPath2 = YasamIcin.Model
+		SccProjectUniqueName3 = YasamIcin.BLL\\YasamIcin.BLL.csproj
+		SccProjectName3 = YasamIcin.BLL
+		SccLocalPath3 = YasamIcin.BLL
+		SccProjectUniqueName4 = YasamIcin.UI.MVC\\YasamIcin.UI.MVC.csproj
+		SccProjectName4 = YasamIcin.UI.MVC
+		SccLocalPath4 = YasamIcin.UI.MVC
+		SccProjectUniqueName5 = YasamIcin.DAL\\YasamIcin.DAL.csproj
+		SccProjectName5 = YasamIcin.DAL
+		SccLocalPath5 = YasamIcin.DAL
+	EndGlobalSection
+EndGlobal
